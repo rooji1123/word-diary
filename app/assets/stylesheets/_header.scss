@@ -1,0 +1,46 @@
+$header-top: 80px;
+
+.header{
+  height: $header-top;
+  width: 100vw;
+  background-color: $white-bulue;
+  display: flex;
+  border-top: 7px #75A9FF solid;
+  border-bottom: 7px #75A9FF solid;
+  &__title{
+    width: 80vw;
+    margin: 0 auto;
+    color: $white;
+    font-size: 50px;
+    text-align: center;
+  }
+  &__link{
+    width: 20vw;
+    display: flex;
+    &__mypage{
+      height: 50px;
+      width: 100px;
+      margin: auto 0;
+      margin-left: 15px;
+      line-height: 50px;
+      text-align: center;
+      background-color:$light-bulue;
+      color: white;
+      text-decoration: none;
+      border: $dark-white 2px solid;
+    }
+    &__post{
+      height: 50px;
+      width: 100px;
+      margin: auto 0;
+      margin-left: 10px;
+      margin-right: 20px;
+      line-height: 50px;
+      text-align: center;
+      background-color:$light-bulue;
+      color: white;
+      text-decoration: none;
+      border: $dark-white 2px solid;
+    }
+  }
+}

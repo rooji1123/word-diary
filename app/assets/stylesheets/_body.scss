@@ -1,0 +1,57 @@
+.body{
+  min-height: calc(100vh - 80px);
+  width: 100vw;
+  background-color: #f5f5f5;
+  .tweets{
+    min-height: calc(100vh - 80px);
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 20px;
+    &__tweet{
+      min-height: 90px;
+      width: 600px;
+      margin-bottom: 10px;
+      background-color: $white;
+      border: $dark-white 2px solid;
+      margin-left: 100px;
+      border-radius: 5px;
+      &__top{
+        height: 30px;
+        display: flex;
+        position: relative;
+        &--name{
+          font-size: 23px;
+        }
+        &--date{
+          height: 30px;
+          position: relative;
+          margin-left: 8px;
+          &--text{
+            font-size: 15px;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+      }
+      &__body{
+        font-size: 18px;
+      }
+      &__bottom{
+        margin-right: 10px;
+        float: right;
+        clear: both;
+      }
+    }
+  }
+
+  .btn{
+    height: 30px;
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    background-color:$light-bulue;
+    color: white;
+    text-decoration: none;
+    border: $dark-white 1px solid;
+  }
+}
