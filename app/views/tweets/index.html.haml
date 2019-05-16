@@ -2,8 +2,12 @@
   .header__title
     %p ひと言日記
   .header__link
-    = link_to "マイページ", '#', class: 'header__link__mypage'
-    = link_to "投稿する", '#', class: 'header__link__post'
+    - if user_signed_in?
+      = link_to "マイページ", '#', class: 'header__link__mypage'
+      = link_to "投稿する", new_tweet_path, class: 'header__link__post'
+    - else
+      = link_to "新規登録", new_user_registration_path,class: 'header__link__mypage'
+      = link_to "ログイン", new_user_session_path, class: 'header__link__post'
 
 %body.body
   .tweets
