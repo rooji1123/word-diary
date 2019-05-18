@@ -3,13 +3,16 @@
     %p ひと言日記
   .header__link
     = link_to "マイページ", '#', class: 'header__link__mypage'
-%body.post
-  = form_for @tweet do |f|
-    .post__top
-      .post__top__title 投稿画面
-    .post__center
-      = f.label :body, "ひとこと"
-      = f.text_field :body, class: "post__center__body", placeholder: "ひとことを入力してください"
-    .post__bottom
-      = f.submit "投稿する"
+%body.body-post
+  .post
+    = form_for @tweet do |f|
+      .post__top
+        .post__top__title 投稿する
+      .post__center
+        = f.label :body, "ひとこと", class: "post__center__label"
+        = f.text_area :body, class: "post__center__body", placeholder: "ひとことを入力してください"
+      .post__bottom
+        .post__bottom__cancel
+          = link_to "キャンセル", root_path
+        = f.submit "投稿する", class: "post__bottom__submit btn"
 %footer.footer

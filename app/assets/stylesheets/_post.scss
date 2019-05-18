@@ -1,0 +1,69 @@
+.body-post{
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  .post{
+    height: 50vh;
+    width: 50vw;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 3px $dark-white solid;
+    border-radius: 10px;
+    &__top{
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      background-color: $light-bulue;
+      border-radius: 4px;
+      font-size: 30px;
+      font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+      color: gray;
+      letter-spacing: 20px;
+      border-bottom: 3px $dark-white solid;
+    }
+    &__center{
+      height: 50px;
+      width: 100%;
+      margin-bottom: 50px;
+      padding-top: 100px;
+      display: flex;
+      &__body{
+        height: 50px;
+        width: 400px;
+        margin-left: 30px;
+        border: $dark-white 3px solid;
+      }
+      &__label{
+        margin-left: 80px;
+        line-height: 50px;
+        font-size: 20px;
+        color: gray;
+        font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+      }
+    }
+    &__bottom{
+      display: flex;
+      justify-content: center;
+      &__submit{
+        height: 50px;
+        width: 100px;
+        margin: 15px;
+      }
+      &__cancel{
+        height: 48px;
+        width: 100px;
+        margin: 15px;
+        text-align: center;
+        line-height: 50px;
+        background-color:$light-bulue;
+        border: $dark-white 1px solid;
+        border-radius: 5px;
+        a{
+        text-decoration: none;
+        color: white;
+        }
+      }
+    }
+  }
+}

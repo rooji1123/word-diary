@@ -2,6 +2,7 @@
   min-height: calc(100vh - 80px);
   width: 100vw;
   background-color: #f5f5f5;
+  padding-bottom: 20px;
   .tweets{
     min-height: calc(100vh - 80px);
     width: 70vw;
@@ -11,22 +12,27 @@
       min-height: 90px;
       width: 600px;
       margin-bottom: 10px;
-      background-color: $white;
+      background-color: white;
       border: $dark-white 2px solid;
       margin-left: 100px;
+      padding-left: 20px;
+      padding-top: 10px;
       border-radius: 5px;
       &__top{
         height: 30px;
         display: flex;
         position: relative;
         &--name{
-          font-size: 23px;
+          font-size: 20px;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         &--date{
+          width: 300px;
           height: 30px;
           position: relative;
-          margin-left: 8px;
+          margin-left: 30px;
           &--text{
+            color: #AAAAAA;
             font-size: 15px;
             position: absolute;
             bottom: 0;
@@ -35,23 +41,17 @@
       }
       &__body{
         font-size: 18px;
+        font-family: YuGothic,'Yu Gothic',sans-serif;
       }
       &__bottom{
+        display: flex;
+        justify-content: flex-end;
         margin-right: 10px;
-        float: right;
-        clear: both;
+        margin-bottom: 5px;
+        &--edit{
+          margin-right: 2px;
+        }
       }
     }
-  }
-
-  .btn{
-    height: 30px;
-    width: 50px;
-    padding: 5px;
-    text-align: center;
-    background-color:$light-bulue;
-    color: white;
-    text-decoration: none;
-    border: $dark-white 1px solid;
   }
 }

@@ -3,22 +3,10 @@
     %p ひと言日記
   .header__link
     - if user_signed_in?
-      = link_to "マイページ", '#', class: 'header__link__mypage'
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header__link__mypage'
       = link_to "投稿する", new_tweet_path, class: 'header__link__post'
     - else
       = link_to "新規登録", new_user_registration_path,class: 'header__link__mypage'
       = link_to "ログイン", new_user_session_path, class: 'header__link__post'
 
-%body.body
-  .tweets
-    - 10.times do
-      .tweets__tweet
-        .tweets__tweet__top
-          .tweets__tweet__top--name サム・フィッシャー
-          .tweets__tweet__top--date
-            %p.tweets__tweet__top--date--text 2872/03/12/13:32:21
-        .tweets__tweet__body
-          %p こんにちは
-        .tweets__tweet__bottom
-          = link_to "編集", '#', class: 'tweets__tweet__bottom--edit btn'
-          = link_to "削除", '#', class: 'tweets__tweet__bottom--deleat btn'
+= render partial: "layouts/body", locals: { tweets: @tweets}, as: :tweet

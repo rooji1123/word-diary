@@ -1,0 +1,19 @@
+%body.body
+  .tweets
+    - tweets.each do |tweet|
+      .tweets__tweet
+        .tweets__tweet__top
+          .tweets__tweet__top--name
+            = tweet.user.name
+          .tweets__tweet__top--date
+            .tweets__tweet__top--date--text
+              = tweet.created_at.strftime("%Y-%m-%d %H:%M")
+        .tweets__tweet__body
+          = simple_format(tweet.body)
+          .tweets__tweet__bottom
+            = render 'likes/like', tweet: tweet
+            - if user_signed_in? && tweet.user_id == current_user.id
+              = link_to "編集", edit_tweet_path(tweet.id), class: 'tweets__tweet__bottom--edit btn'
+              = link_to "削除", tweet_path(tweet.id), method: :delete, class: 'tweets__tweet__bottom--deleat btn'
+    .pagination-bottom
+      = paginate @tweets
