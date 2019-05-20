@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.page(params[:page]).per(10).order(created_at: :DESC)
+    @tweets = Tweet.page(params[:page]).per(5).order(created_at: :DESC)
   end
 
   def new
@@ -8,9 +8,14 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
-    flash[:notice] = "投稿が完了しました"
-    redirect_to :root
+    @tweet = Tweet.create(tweet_params)
+    if @tweet.save
+      flash[:notice] = "投稿が完了しました"
+      redirect_to :root
+    else
+      flash[:alert] = "ひとことを入力してください"
+      render 'new'
+    end
   end
 
   def edit
@@ -20,6 +25,7 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
+    flash[:notice] = "編集が完了しました"
     redirect_to :root
   end
 
